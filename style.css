@@ -1,0 +1,15 @@
+#navBar {
+  color: white;
+  font-weight: lighter;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.box {
+  margin-top: 3%;
+  border: 1px solid #444444;
+  padding: 3%;
+  opacity: 50%;
+}
