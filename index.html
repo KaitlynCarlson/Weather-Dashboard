@@ -44,9 +44,118 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-4 box">Left Column</div>
+        <div class="col-4 box left">
+          <div class="row subbox">
+            <div class="card text-dark bg-light mb-1 border-dark">
+              <div class="card-header ">
+                <h4>Current Local Weather</h4>
+              </div>
+              <div class="card-body" id="currentLocalWeather"></div>
+            </div>
+          </div>
+          <br />
+          <div class="row subbox">
+            <h3>Search By City</h3>
+            <form>
+              <div class="form-row align-items-center">
+                <div class="col-auto">
+                  <label class="sr-only" for="inlineFormInput">City</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    id="inlineFormInput"
+                    placeholder=""
+                  />
+                </div>
+                <div class="col-auto">
+                  <button type="button" class="btn btn-info mb-2">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <br />
+          <div class="row subbox">
+            <h6>
+              Search History
+            </h6>
+          </div>
+        </div>
         <div class="col-1 space-between"></div>
-        <div class="col-7 box">Right Column</div>
+        <div class="col-7 box right">
+          <div class="row subbox">
+            <h3 id="searchedCityDateIconDisplay">
+              Searched City Weather Display
+            </h3>
+            <div class="row subsubbox" id="temperature">
+              <p class="lead">Temperature:</p>
+            </div>
+            <div class="row subsubbox" id="humidity">
+              <p class="lead">Humidity:</p>
+            </div>
+            <div class="row subsubbox" id="windSpeed">
+              <p class="lead">Wind Speed:</p>
+            </div>
+            <div class="row subsubbox" id="UV Index">
+              <p class="lead">UV Index:</p>
+            </div>
+          </div>
+          <hr class="display-10" />
+          <div class=" subbox">
+            <h3>5 Day Forecast</h3>
+            <div class="row fivedayforecastcardcontainer">
+              <!-- <div class="col fivedayforecastcard">
+                <div class="card text-dark bg-light mb-1 border-dark">
+                  <div class="card-header ">
+                    <h4></h4>
+                  </div>
+                  <div class="card-body"></div>
+                </div>
+              </div>
+              <div class="col fivedayforecastcard">
+                <div class="col fivedayforecastcard">
+                  <div class="card text-dark bg-light mb-1 border-dark">
+                    <div class="card-header ">
+                      <h4></h4>
+                    </div>
+                    <div class="card-body"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col fivedayforecastcard">
+                <div class="col fivedayforecastcard">
+                  <div class="card text-dark bg-light mb-1 border-dark">
+                    <div class="card-header ">
+                      <h4></h4>
+                    </div>
+                    <div class="card-body"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col fivedayforecastcard">
+                <div class="col fivedayforecastcard">
+                  <div class="card text-dark bg-light mb-1 border-dark">
+                    <div class="card-header ">
+                      <h4></h4>
+                    </div>
+                    <div class="card-body"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col  fivedayforecastcard">
+                <div class="col fivedayforecastcard">
+                  <div class="card text-dark bg-light mb-1 border-dark">
+                    <div class="card-header ">
+                      <h4></h4>
+                    </div>
+                    <div class="card-body"></div>
+                  </div>
+                </div> -->
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
