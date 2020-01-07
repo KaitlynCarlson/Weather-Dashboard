@@ -35,15 +35,16 @@
   <body>
     <nav class="navbar sticky-top navbar-light bg-dark">
       <img
-        src="https://storage.needpix.com/rsynced_images/temperature-2314778_1280.png"
-        height="40"
-        width="40"
+        src="https://cdn.pixabay.com/photo/2016/03/31/21/56/blue-1296737_960_720.png"
+        height="100"
+        width="100"
+        id="navImage"
       />
       <h3 id="navBar">Weather Dashboard</h3>
     </nav>
 
     <div class="container">
-      <div class="row">
+      <div class="row ">
         <div class="col-4 box left">
           <div class="row subbox">
             <div class="card text-dark bg-light mb-1 border-dark">
@@ -55,7 +56,7 @@
           </div>
           <br />
           <div class="row subbox">
-            <h3>Search By City</h3>
+            <h5>Search By City</h5>
             <form>
               <div class="form-row align-items-center">
                 <div class="col-auto">
@@ -77,9 +78,10 @@
           </div>
           <br />
           <div class="row subbox">
-            <h6>
+            <h5>
               Search History
-            </h6>
+              <hr class="display-10" />
+            </h5>
           </div>
         </div>
         <div class="col-1 space-between"></div>
@@ -104,59 +106,12 @@
           <hr class="display-10" />
           <div class=" subbox">
             <h3>5 Day Forecast</h3>
-            <div class="row fivedayforecastcardcontainer">
-              <!-- <div class="col fivedayforecastcard">
-                <div class="card text-dark bg-light mb-1 border-dark">
-                  <div class="card-header ">
-                    <h4></h4>
-                  </div>
-                  <div class="card-body"></div>
-                </div>
-              </div>
-              <div class="col fivedayforecastcard">
-                <div class="col fivedayforecastcard">
-                  <div class="card text-dark bg-light mb-1 border-dark">
-                    <div class="card-header ">
-                      <h4></h4>
-                    </div>
-                    <div class="card-body"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col fivedayforecastcard">
-                <div class="col fivedayforecastcard">
-                  <div class="card text-dark bg-light mb-1 border-dark">
-                    <div class="card-header ">
-                      <h4></h4>
-                    </div>
-                    <div class="card-body"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col fivedayforecastcard">
-                <div class="col fivedayforecastcard">
-                  <div class="card text-dark bg-light mb-1 border-dark">
-                    <div class="card-header ">
-                      <h4></h4>
-                    </div>
-                    <div class="card-body"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col  fivedayforecastcard">
-                <div class="col fivedayforecastcard">
-                  <div class="card text-dark bg-light mb-1 border-dark">
-                    <div class="card-header ">
-                      <h4></h4>
-                    </div>
-                    <div class="card-body"></div>
-                  </div>
-                </div> -->
-              <!-- </div> -->
-            </div>
+            <div class="row fivedayforecastcardcontainer"></div>
           </div>
         </div>
       </div>
     </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </body>
 </html>
