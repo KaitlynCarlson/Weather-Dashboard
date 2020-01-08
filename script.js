@@ -59,7 +59,6 @@ $(document).ready(function() {
             (Math.trunc(response.main.temp - 273.15) * 1.8 + 32) +
             " \xB0 F"
         );
-      //   $(currentLocatiionTemperature).addClass("lead");
       $("#currentLocalWeather").append(currentLocationTemperature);
 
       // Display current location humidity
@@ -155,6 +154,159 @@ $(".cityInputButton").on("click", function(event) {
       method: "GET"
     }).then(function(info) {
       $("#searchedUVIndex").append(" " + info[0].value);
+    });
+
+    // Call and Display 5 Day Forecast
+    var cityName = data.name;
+    var countryCode = data.sys.country;
+    var queryURL5 =
+      "http://api.openweathermap.org/data/2.5/forecast?q=" +
+      cityName +
+      "," +
+      countryCode +
+      "&appid=" +
+      APIKey;
+
+    $.ajax({
+      url: queryURL5,
+      get: "GET"
+    }).then(function(fiveDayInfo) {
+      console.log(fiveDayInfo);
+      // Day 1 5 Day Forecast
+      $(".date-1").text(fiveDayInfo.list[0].dt_txt);
+      $(".date-1-Info").append(
+        "<img src= http://openweathermap.org/img/wn/" +
+          fiveDayInfo.list[0].weather[0].icon +
+          ".png>"
+      );
+      $(".date-1-Info").append(
+        "<br>" +
+          fiveDayInfo.list[0].weather[0].description.toUpperCase() +
+          "<br>"
+      );
+      $(".date-1-Info").append(
+        "<br/>" +
+          "<p class= lead>" +
+          "Temp: " +
+          (Math.trunc(fiveDayInfo.list[0].main.temp - 273.15) * 1.8 + 32) +
+          " \xB0 F " +
+          "</p>"
+      );
+      $(".date-1-Info").append(
+        "<p class=lead>" +
+          "Humidity: " +
+          fiveDayInfo.list[0].main.humidity +
+          "%" +
+          "</p>"
+      );
+      //Day 2 5 Day Forecast
+      $(".date-2").text(fiveDayInfo.list[8].dt_txt);
+      $(".date-2-Info").append(
+        "<img src= http://openweathermap.org/img/wn/" +
+          fiveDayInfo.list[1].weather[0].icon +
+          ".png>"
+      );
+      $(".date-2-Info").append(
+        "<br>" +
+          fiveDayInfo.list[8].weather[0].description.toUpperCase() +
+          "<br>"
+      );
+      $(".date-2-Info").append(
+        "<br/>" +
+          "<p class= lead>" +
+          "Temp: " +
+          (Math.trunc(fiveDayInfo.list[8].main.temp - 273.15) * 1.8 + 32) +
+          " \xB0 F " +
+          "</p>"
+      );
+      $(".date-2-Info").append(
+        "<p class=lead>" +
+          "Humidity: " +
+          fiveDayInfo.list[8].main.humidity +
+          "%" +
+          "</p>"
+      );
+      //Day 3 5 Day Forecast
+      $(".date-3").text(fiveDayInfo.list[16].dt_txt);
+      $(".date-3-Info").append(
+        "<img src= http://openweathermap.org/img/wn/" +
+          fiveDayInfo.list[16].weather[0].icon +
+          ".png>"
+      );
+      $(".date-3-Info").append(
+        "<br>" +
+          fiveDayInfo.list[16].weather[0].description.toUpperCase() +
+          "<br>"
+      );
+      $(".date-3-Info").append(
+        "<br/>" +
+          "<p class= lead>" +
+          "Temp: " +
+          (Math.trunc(fiveDayInfo.list[16].main.temp - 273.15) * 1.8 + 32) +
+          " \xB0 F " +
+          "</p>"
+      );
+      $(".date-3-Info").append(
+        "<p class=lead>" +
+          "Humidity: " +
+          fiveDayInfo.list[16].main.humidity +
+          "%" +
+          "</p>"
+      );
+      //Day 4 5 Day Forecast
+      $(".date-4").text(fiveDayInfo.list[24].dt_txt);
+      $(".date-4-Info").append(
+        "<img src= http://openweathermap.org/img/wn/" +
+          fiveDayInfo.list[24].weather[0].icon +
+          ".png>"
+      );
+      $(".date-4-Info").append(
+        "<br>" +
+          fiveDayInfo.list[24].weather[0].description.toUpperCase() +
+          "<br>"
+      );
+      $(".date-4-Info").append(
+        "<br/>" +
+          "<p class= lead>" +
+          "Temp: " +
+          (Math.trunc(fiveDayInfo.list[24].main.temp - 273.15) * 1.8 + 32) +
+          " \xB0 F " +
+          "</p>"
+      );
+      $(".date-4-Info").append(
+        "<p class=lead>" +
+          "Humidity: " +
+          fiveDayInfo.list[24].main.humidity +
+          "%" +
+          "</p>"
+      );
+      //Day 5 5 Day Forecast
+      $(".date-5").text(fiveDayInfo.list[32].dt_txt);
+      $(".date-5-Info").append(
+        "<img src= http://openweathermap.org/img/wn/" +
+          fiveDayInfo.list[32].weather[0].icon +
+          ".png>"
+      );
+      $(".date-5-Info").append(
+        "<br>" +
+          fiveDayInfo.list[32].weather[0].description.toUpperCase() +
+          "<br>"
+      );
+      $(".date-5-Info").append(
+        "<br/>" +
+          "<p class= lead>" +
+          "Temp: " +
+          (Math.trunc(fiveDayInfo.list[24].main.temp - 273.15) * 1.8 + 32) +
+          " \xB0 F " +
+          "</p>"
+      );
+      $(".date-5-Info").append(
+        "<p class=lead>" +
+          "Humidity: " +
+          fiveDayInfo.list[32].main.humidity +
+          "%" +
+          "</p>"
+      );
     });
   });
   var searchHistory = [];

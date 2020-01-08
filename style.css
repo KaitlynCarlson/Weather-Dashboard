@@ -13,6 +13,7 @@
 .right {
   border: 0.2px solid lightslategray;
   margin-top: 3%;
+  display: grid;
 }
 .left {
   background-color: #f5f5f5;
@@ -46,4 +47,11 @@
 #searchHistory {
   display: flex;
   flex-direction: column;
+}
+.fiveDayForecast {
+  display: flex;
+  flex-direction: row;
+}
+.forecast {
+  margin: 1%;
 }
