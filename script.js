@@ -115,7 +115,7 @@ $(".cityInputButton").on("click", function(event) {
         data.weather[0].icon +
         ".png>"
     );
-    $("#searchedCityDateIconDisplay").append(
+    $("#searchedCityDateIconDisplay").html(
       citySearchInput + " " + searchedCityDate.text()
     );
     $("#searchedCityDateIconDisplay")
@@ -125,19 +125,20 @@ $(".cityInputButton").on("click", function(event) {
     //City Search Current Description Display
     var searchedDescription = $("<p>");
     searchedDescription.text(data.weather[0].description.toUpperCase());
-    $("#searchedDescription").prepend(searchedDescription);
+    $("#searchedDescription").html(searchedDescription);
 
     // City Search Current Temperature Display
-    var searchedTemperature = Math.trunc(data.main.temp - 273.15) * 1.8 + 32;
-    $("#searchedTemperature").append(" " + searchedTemperature + " \xB0 F");
+    var searchedTemperature =
+      "Temperature: " + (Math.trunc(data.main.temp - 273.15) * 1.8 + 32);
+    $("#searchedTemperature").html(" " + searchedTemperature + " \xB0 F");
 
     // City Search Current Humidity Display
-    var searchedCurrentHumidity = " " + data.main.humidity + " %";
-    $("#searchedHumidity").append(searchedCurrentHumidity);
+    var searchedCurrentHumidity = "Humidity: " + data.main.humidity + " %";
+    $("#searchedHumidity").html(searchedCurrentHumidity);
 
     // City Search Current Wind Speed Display
     var searchedCurrentWindSpeed = data.wind.speed + " mph";
-    $("#searchedWindSpeed").append(" " + searchedCurrentWindSpeed);
+    $("#searchedWindSpeed").html("Wind Speed: " + searchedCurrentWindSpeed);
 
     var long = data.coord.lon;
     var lat = data.coord.lat;
@@ -153,7 +154,7 @@ $(".cityInputButton").on("click", function(event) {
       url: queryURL4,
       method: "GET"
     }).then(function(info) {
-      $("#searchedUVIndex").append(" " + info[0].value);
+      $("#searchedUVIndex").html("UV Index: " + info[0].value);
     });
 
     // Call and Display 5 Day Forecast
@@ -169,7 +170,7 @@ $(".cityInputButton").on("click", function(event) {
 
     $.ajax({
       url: queryURL5,
-      get: "GET"
+      method: "GET"
     }).then(function(fiveDayInfo) {
       console.log(fiveDayInfo);
       // Day 1 5 Day Forecast
@@ -314,7 +315,7 @@ $(".cityInputButton").on("click", function(event) {
   for (var i = 0; i < searchHistory.length; ++i) {
     var cityHistoryButton = $("<button>");
     cityHistoryButton.text(searchHistory[i]);
-    cityHistoryButton.addClass("btn btn-secondary btn-lg");
+    cityHistoryButton.addClass("btn btn-secondary btn-lg history");
     $(cityHistoryButton).css("margin", "1%");
     cityHistoryButton.attr("city-name", searchHistory[i]);
     $("#searchHistory").prepend(cityHistoryButton);

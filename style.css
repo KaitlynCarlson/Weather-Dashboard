@@ -11,8 +11,6 @@
   padding: 3%;
 }
 .right {
-  border: 0.2px solid lightslategray;
-  margin-top: 3%;
   display: grid;
 }
 .left {
@@ -29,7 +27,6 @@
 
 .fivedayforecastcard {
   margin: 1%;
-  display: grid;
 }
 #navImage {
   border-radius: 50%;
