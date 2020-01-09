@@ -44,96 +44,109 @@
       <h3 id="navBar">Weather Dashboard</h3>
     </nav>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="row">
-            <div class="col-4 box left">
-              <div class="row subbox">
-                <div class="card text-dark bg-light mb-1">
-                  <div class="card-header ">
-                    <h4>Current Local Weather</h4>
-                  </div>
-                  <div class="card-body" id="currentLocalWeather"></div>
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-4 box left">
+            <div class="row subbox">
+              <div class="card text-dark bg-light mb-1">
+                <div class="card-header ">
+                  <h4>Current Local Weather</h4>
                 </div>
-              </div>
-              <br />
-              <div class="row subbox">
-                <h5>Search By City</h5>
-                <form>
-                  <div class="form-row align-items-center">
-                    <div class="col-auto">
-                      <label class="sr-only" for="inlineFormInput">City</label>
-                      <input
-                        type="text"
-                        class="form-control mb-2 cityInput"
-                        id="inlineFormInput"
-                        placeholder=""
-                      />
-                    </div>
-                    <div class="col-auto">
-                      <button
-                        type="button"
-                        class="btn btn-info mb-2 cityInputButton"
-                      >
-                        <span class="glyphicon glyphicon-search"></span> Search
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <br />
-              <div class="row subbox">
-                <h5>
-                  Search History
-                  <hr class="display-10" />
-                </h5>
-                <div id="searchHistory"></div>
+                <div class="card-body" id="currentLocalWeather"></div>
               </div>
             </div>
-            <div class="col-8 box right clear">
-              <div class="row subbox">
-                <h3 id="searchedCityDateIconDisplay"></h3>
-                <div class="row subsubbox" id="description">
-                  <p class="lead" id="searchedDescription"></p>
+            <br />
+            <div class="row subbox">
+              <h5>Search By City</h5>
+              <form>
+                <div class="form-row align-items-center">
+                  <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">City</label>
+                    <input
+                      type="text"
+                      class="form-control mb-2 cityInput"
+                      id="inlineFormInput"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="col-auto">
+                    <button
+                      type="button"
+                      class="btn btn-info mb-2 cityInputButton"
+                    >
+                      <span class="glyphicon glyphicon-search"></span> Search
+                    </button>
+                  </div>
                 </div>
-                <div class="row subsubbox" id="temperature">
-                  <p class="lead" id="searchedTemperature"></p>
-                </div>
-                <div class="row subsubbox" id="humidity">
-                  <p class="lead" id="searchedHumidity"></p>
-                </div>
-                <div class="row subsubbox" id="windSpeed">
-                  <p class="lead" id="searchedWindSpeed"></p>
-                </div>
-                <div class="row subsubbox" id="UV Index">
-                  <p class="lead" id="searchedUVIndex"></p>
-                </div>
+              </form>
+            </div>
+            <br />
+            <div class="row subbox">
+              <h5>
+                Search History
+                <hr class="display-10" />
+              </h5>
+              <div id="searchHistory"></div>
+            </div>
+          </div>
+          <div class="col-8 box right clear">
+            <div class="row subbox">
+              <h3 id="searchedCityDateIconDisplay"></h3>
+              <div class="row subsubbox" id="description">
+                <p class="lead" id="searchedDescription"></p>
               </div>
-              <hr class="display-4" />
-              <div class=" subbox">
-                <h3>5 Day Forecast</h3>
-                <div class="fiveDayForecast">
-                  <div class="card text-dark bg-light mb-1 forecast">
-                    <div class="card-header five-day date-1"></div>
-                    <div class="card-body five-day-Info date-1-Info"></div>
-                  </div>
-                  <div class="card text-dark bg-light mb-1 forecast">
-                    <div class="card-header five-day date-2"></div>
-                    <div class="card-body five-day-Info date-2-Info"></div>
-                  </div>
-                  <div class="card text-dark bg-light mb-1 forecast">
-                    <div class="card-header five-day date-3"></div>
-                    <div class="card-body five-day-Info date-3-Info"></div>
-                  </div>
-                  <div class="card text-dark bg-light mb-1 forecast">
-                    <div class="card-header five-day date-4"></div>
-                    <div class="card-body five-day-Info date-4-Info"></div>
-                  </div>
-                  <div class="card text-dark bg-light mb-1 forecast">
-                    <div class="card-header five-day date-5"></div>
-                    <div class="card-body five-day-Info date-5-Info"></div>
-                  </div>
+              <div class="row subsubbox" id="temperature">
+                <p class="lead" id="searchedTemperature"></p>
+              </div>
+              <div class="row subsubbox" id="humidity">
+                <p class="lead" id="searchedHumidity"></p>
+              </div>
+              <div class="row subsubbox" id="windSpeed">
+                <p class="lead" id="searchedWindSpeed"></p>
+              </div>
+              <div class="row subsubbox" id="UV Index">
+                <p class="lead" id="searchedUVIndex"></p>
+              </div>
+            </div>
+            <hr class="display-4" />
+            <div class=" subbox">
+              <h3>5 Day Forecast</h3>
+              <div class="row fiveDayForecast">
+                <div class="card text-dark bg-light mb-1 forecast">
+                  <div class="card-header five-day date-1" id="five"></div>
+                  <div
+                    class="card-body five-day-Info date-1-Info"
+                    id="five"
+                  ></div>
+                </div>
+                <div class="card text-dark bg-light mb-1 forecast">
+                  <div class="card-header five-day date-2" id="five"></div>
+                  <div
+                    class="card-body five-day-Info date-2-Info"
+                    id="five"
+                  ></div>
+                </div>
+                <div class="card text-dark bg-light mb-1 forecast">
+                  <div class="card-header five-day date-3" id="five"></div>
+                  <div
+                    class="card-body five-day-Info date-3-Info"
+                    id="five"
+                  ></div>
+                </div>
+                <div class="card text-dark bg-light mb-1 forecast">
+                  <div class="card-header five-day date-4" id="five"></div>
+                  <div
+                    class="card-body five-day-Info date-4-Info"
+                    id="five"
+                  ></div>
+                </div>
+                <div class="card text-dark bg-light mb-1 forecast">
+                  <div class="card-header five-day date-5" id="five"></div>
+                  <div
+                    class="card-body five-day-Info date-5-Info"
+                    id="five"
+                  ></div>
                 </div>
               </div>
             </div>

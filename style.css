@@ -28,6 +28,9 @@
 .fivedayforecastcard {
   margin: 1%;
 }
+.five {
+  width: 100%;
+}
 #navImage {
   border-radius: 50%;
   margin-bottom: 2%;

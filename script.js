@@ -90,7 +90,7 @@ $(document).ready(function() {
 
   promptLocation();
 });
-$(".cityInputButton").on("click", function(event) {
+$(".cityInputButton").on("click", function renderCity(event) {
   event.preventDefault();
 
   var citySearchInput = $(".cityInput").val();
