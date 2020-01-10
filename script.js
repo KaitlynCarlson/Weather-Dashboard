@@ -1,4 +1,5 @@
-$(document).ready(function() {
+$(document).ready(function(event) {
+  event.preventDefault();
   var getLocation = document.getElementById("currentLocalWeather");
   var longitude = "";
   var latitude = "";
@@ -91,7 +92,7 @@ $(document).ready(function() {
   promptLocation();
 });
 $(".cityInputButton").on("click", function renderCity(event) {
-  event.preventDefault();
+  // event.preventDefault();
 
   var citySearchInput = $(".cityInput").val();
   console.log(citySearchInput);
@@ -174,12 +175,14 @@ $(".cityInputButton").on("click", function renderCity(event) {
     }).then(function(fiveDayInfo) {
       console.log(fiveDayInfo);
       // Day 1 5 Day Forecast
-      $(".date-1").text(fiveDayInfo.list[0].dt_txt);
-      $(".date-1-Info").append(
-        "<img src= http://openweathermap.org/img/wn/" +
-          fiveDayInfo.list[0].weather[0].icon +
-          ".png>"
-      );
+      $(".date-1").html(fiveDayInfo.list[0].dt_txt);
+      $(".date-1-Info")
+        .empty()
+        .append(
+          "<img src= http://openweathermap.org/img/wn/" +
+            fiveDayInfo.list[0].weather[0].icon +
+            ".png>"
+        );
       $(".date-1-Info").append(
         "<br>" +
           fiveDayInfo.list[0].weather[0].description.toUpperCase() +
@@ -189,7 +192,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
         "<br/>" +
           "<p class= lead>" +
           "Temp: " +
-          (Math.trunc(fiveDayInfo.list[0].main.temp - 273.15) * 1.8 + 32) +
+          Math.trunc((fiveDayInfo.list[0].main.temp - 273.15) * 1.8 + 32) +
           " \xB0 F " +
           "</p>"
       );
@@ -201,12 +204,14 @@ $(".cityInputButton").on("click", function renderCity(event) {
           "</p>"
       );
       //Day 2 5 Day Forecast
-      $(".date-2").text(fiveDayInfo.list[8].dt_txt);
-      $(".date-2-Info").append(
-        "<img src= http://openweathermap.org/img/wn/" +
-          fiveDayInfo.list[1].weather[0].icon +
-          ".png>"
-      );
+      $(".date-2").html(fiveDayInfo.list[8].dt_txt);
+      $(".date-2-Info")
+        .empty()
+        .append(
+          "<img src= http://openweathermap.org/img/wn/" +
+            fiveDayInfo.list[1].weather[0].icon +
+            ".png>"
+        );
       $(".date-2-Info").append(
         "<br>" +
           fiveDayInfo.list[8].weather[0].description.toUpperCase() +
@@ -216,7 +221,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
         "<br/>" +
           "<p class= lead>" +
           "Temp: " +
-          (Math.trunc(fiveDayInfo.list[8].main.temp - 273.15) * 1.8 + 32) +
+          Math.trunc((fiveDayInfo.list[8].main.temp - 273.15) * 1.8 + 32) +
           " \xB0 F " +
           "</p>"
       );
@@ -228,12 +233,14 @@ $(".cityInputButton").on("click", function renderCity(event) {
           "</p>"
       );
       //Day 3 5 Day Forecast
-      $(".date-3").text(fiveDayInfo.list[16].dt_txt);
-      $(".date-3-Info").append(
-        "<img src= http://openweathermap.org/img/wn/" +
-          fiveDayInfo.list[16].weather[0].icon +
-          ".png>"
-      );
+      $(".date-3").html(fiveDayInfo.list[16].dt_txt);
+      $(".date-3-Info")
+        .empty()
+        .append(
+          "<img src= http://openweathermap.org/img/wn/" +
+            fiveDayInfo.list[16].weather[0].icon +
+            ".png>"
+        );
       $(".date-3-Info").append(
         "<br>" +
           fiveDayInfo.list[16].weather[0].description.toUpperCase() +
@@ -243,7 +250,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
         "<br/>" +
           "<p class= lead>" +
           "Temp: " +
-          (Math.trunc(fiveDayInfo.list[16].main.temp - 273.15) * 1.8 + 32) +
+          Math.trunc((fiveDayInfo.list[16].main.temp - 273.15) * 1.8 + 32) +
           " \xB0 F " +
           "</p>"
       );
@@ -255,12 +262,14 @@ $(".cityInputButton").on("click", function renderCity(event) {
           "</p>"
       );
       //Day 4 5 Day Forecast
-      $(".date-4").text(fiveDayInfo.list[24].dt_txt);
-      $(".date-4-Info").append(
-        "<img src= http://openweathermap.org/img/wn/" +
-          fiveDayInfo.list[24].weather[0].icon +
-          ".png>"
-      );
+      $(".date-4").html(fiveDayInfo.list[24].dt_txt);
+      $(".date-4-Info")
+        .empty()
+        .append(
+          "<img src= http://openweathermap.org/img/wn/" +
+            fiveDayInfo.list[24].weather[0].icon +
+            ".png>"
+        );
       $(".date-4-Info").append(
         "<br>" +
           fiveDayInfo.list[24].weather[0].description.toUpperCase() +
@@ -270,7 +279,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
         "<br/>" +
           "<p class= lead>" +
           "Temp: " +
-          (Math.trunc(fiveDayInfo.list[24].main.temp - 273.15) * 1.8 + 32) +
+          Math.trunc((fiveDayInfo.list[24].main.temp - 273.15) * 1.8 + 32) +
           " \xB0 F " +
           "</p>"
       );
@@ -282,12 +291,14 @@ $(".cityInputButton").on("click", function renderCity(event) {
           "</p>"
       );
       //Day 5 5 Day Forecast
-      $(".date-5").text(fiveDayInfo.list[32].dt_txt);
-      $(".date-5-Info").append(
-        "<img src= http://openweathermap.org/img/wn/" +
-          fiveDayInfo.list[32].weather[0].icon +
-          ".png>"
-      );
+      $(".date-5").html(fiveDayInfo.list[32].dt_txt);
+      $(".date-5-Info")
+        .empty()
+        .append(
+          "<img src= http://openweathermap.org/img/wn/" +
+            fiveDayInfo.list[32].weather[0].icon +
+            ".png>"
+        );
       $(".date-5-Info").append(
         "<br>" +
           fiveDayInfo.list[32].weather[0].description.toUpperCase() +
@@ -297,7 +308,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
         "<br/>" +
           "<p class= lead>" +
           "Temp: " +
-          (Math.trunc(fiveDayInfo.list[24].main.temp - 273.15) * 1.8 + 32) +
+          Math.trunc((fiveDayInfo.list[24].main.temp - 273.15) * 1.8 + 32) +
           " \xB0 F " +
           "</p>"
       );
