@@ -1,5 +1,4 @@
-$(document).ready(function(event) {
-  event.preventDefault();
+$(document).ready(function() {
   var getLocation = document.getElementById("currentLocalWeather");
   var longitude = "";
   var latitude = "";
@@ -92,7 +91,7 @@ $(document).ready(function(event) {
   promptLocation();
 });
 $(".cityInputButton").on("click", function renderCity(event) {
-  // event.preventDefault();
+  event.preventDefault();
 
   var citySearchInput = $(".cityInput").val();
   console.log(citySearchInput);
@@ -130,7 +129,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
 
     // City Search Current Temperature Display
     var searchedTemperature =
-      "Temperature: " + (Math.trunc(data.main.temp - 273.15) * 1.8 + 32);
+      "Temperature: " + Math.trunc((data.main.temp - 273.15) * 1.8 + 32);
     $("#searchedTemperature").html(" " + searchedTemperature + " \xB0 F");
 
     // City Search Current Humidity Display
