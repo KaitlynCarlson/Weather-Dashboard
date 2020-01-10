@@ -15,7 +15,7 @@ $(document).ready(function() {
     longitude = position.coords.longitude;
 
     var queryURL =
-      "https://api.openweathermap.org/data/2.5/weather?lat=" +
+      "http://api.openweathermap.org/data/2.5/weather?lat=" +
       latitude +
       "&lon=" +
       longitude +
@@ -97,7 +97,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
   console.log(citySearchInput);
   var APIKey = "a7a937c38812c7344cdc1be9de8b1c79";
   var queryURL3 =
-    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    "http://api.openweathermap.org/data/2.5/weather?q=" +
     citySearchInput +
     "&appid=" +
     APIKey;
