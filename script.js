@@ -26,7 +26,7 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(response) {
       //   console.log(response);
-      var currentLocationCity = $("<p>");
+      var currentLocationCity = $("<h1>");
       var currentLocationTemperature = $("<p>");
       var currentLocationHumidity = $("<p>");
       var currentLocationIcon = $(
