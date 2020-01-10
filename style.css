@@ -12,6 +12,7 @@
 }
 .right {
   display: grid;
+  background-color: #7285a5;
 }
 .left {
   background-color: #f5f5f5;
