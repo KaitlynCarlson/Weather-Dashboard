@@ -15,7 +15,7 @@ $(document).ready(function() {
     longitude = position.coords.longitude;
 
     var queryURL =
-      "http://api.openweathermap.org/data/2.5/weather?lat=" +
+      "https://api.openweathermap.org/data/2.5/weather?lat=" +
       latitude +
       "&lon=" +
       longitude +
@@ -30,7 +30,7 @@ $(document).ready(function() {
       var currentLocationTemperature = $("<p>");
       var currentLocationHumidity = $("<p>");
       var currentLocationIcon = $(
-        "<img src= http://openweathermap.org/img/wn/" +
+        "<img src= https://openweathermap.org/img/wn/" +
           response.weather[0].icon +
           ".png>"
       );
@@ -69,7 +69,7 @@ $(document).ready(function() {
       $("#currentLocalWeather").append(currentLocationHumidity);
       // Display UV Index
       var queryURL2 =
-        "http://api.openweathermap.org/data/2.5/uvi/forecast?lat=" +
+        "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" +
         latitude +
         "&lon=" +
         longitude +
@@ -97,7 +97,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
   console.log(citySearchInput);
   var APIKey = "a7a937c38812c7344cdc1be9de8b1c79";
   var queryURL3 =
-    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
     citySearchInput +
     "&appid=" +
     APIKey;
@@ -111,7 +111,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
     $(searchedCityDate).text(moment().format("MM/DD/YY"));
 
     var searchedCityIcon = $(
-      "<img src= http://openweathermap.org/img/wn/" +
+      "<img src= https://openweathermap.org/img/wn/" +
         data.weather[0].icon +
         ".png>"
     );
@@ -143,7 +143,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
     var long = data.coord.lon;
     var lat = data.coord.lat;
     var queryURL4 =
-      "http://api.openweathermap.org/data/2.5/uvi/forecast?lat=" +
+      "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" +
       lat +
       "&lon=" +
       long +
@@ -161,7 +161,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
     var cityName = data.name;
     var countryCode = data.sys.country;
     var queryURL5 =
-      "http://api.openweathermap.org/data/2.5/forecast?q=" +
+      "https://api.openweathermap.org/data/2.5/forecast?q=" +
       cityName +
       "," +
       countryCode +
@@ -178,7 +178,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
       $(".date-1-Info")
         .empty()
         .append(
-          "<img src= http://openweathermap.org/img/wn/" +
+          "<img src= https://openweathermap.org/img/wn/" +
             fiveDayInfo.list[0].weather[0].icon +
             ".png>"
         );
@@ -207,7 +207,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
       $(".date-2-Info")
         .empty()
         .append(
-          "<img src= http://openweathermap.org/img/wn/" +
+          "<img src= https://openweathermap.org/img/wn/" +
             fiveDayInfo.list[1].weather[0].icon +
             ".png>"
         );
@@ -236,7 +236,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
       $(".date-3-Info")
         .empty()
         .append(
-          "<img src= http://openweathermap.org/img/wn/" +
+          "<img src= https://openweathermap.org/img/wn/" +
             fiveDayInfo.list[16].weather[0].icon +
             ".png>"
         );
@@ -265,7 +265,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
       $(".date-4-Info")
         .empty()
         .append(
-          "<img src= http://openweathermap.org/img/wn/" +
+          "<img src= https://openweathermap.org/img/wn/" +
             fiveDayInfo.list[24].weather[0].icon +
             ".png>"
         );
@@ -294,7 +294,7 @@ $(".cityInputButton").on("click", function renderCity(event) {
       $(".date-5-Info")
         .empty()
         .append(
-          "<img src= http://openweathermap.org/img/wn/" +
+          "<img src= https://openweathermap.org/img/wn/" +
             fiveDayInfo.list[32].weather[0].icon +
             ".png>"
         );
