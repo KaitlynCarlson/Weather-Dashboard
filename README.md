@@ -23,6 +23,6 @@ Open Weather Maps is also queried for the five day forecast of the searched city
 ## Known Bugs
 
 1. Five day forecast is not pulling the median temperature of the day but rather the temp at the start of the day. The returned array needs to be iterated over, an equation built utilizing the values to create an average temperature.
-2. Buttons are not active yet in rendering weather data quickly for users. Code needs to be cleaned up and some actions seperated in order to achieve optimal action.
+2. Buttons are not active yet in rendering weather data quickly for users. Code needs to be cleaned up and some actions seperated in order to achieve optimal quick display.
 3. Local storage needs to be added so that weather data remains when user navigates away. Also set the last searched city as the default on page load.
 4. The current local weather card has a slow load time. Investigate ways to quicken the call to Geolocation and then OpenWeatherMap APIs.
